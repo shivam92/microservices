@@ -1,0 +1,20 @@
+services:
+  network-deploy-service:
+    networks:
+      - mmmut
+
+  microservice-base-config:
+    extends:
+      service: network-deploy-service
+    
+
+  microservice-configserver-config:
+    extends:
+      service: microservice-base-config
+    depends_on:
+      configserver: healthy
+      eurekaserver: healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: qa
+      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: eurekaserver:http://eurekaserver:8070/
