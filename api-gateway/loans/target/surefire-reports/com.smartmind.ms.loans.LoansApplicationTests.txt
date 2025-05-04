@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.smartmind.ms.loans.LoansApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.01 s -- in com.smartmind.ms.loans.LoansApplicationTests
